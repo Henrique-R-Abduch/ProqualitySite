@@ -1,18 +1,13 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  root: "./src", // <-- indica que o frontend está em ./src
-  publicDir: "../public", // <-- se você tiver assets públicos
   build: {
-    outDir: "../dist", // <-- onde será gerado o build para o Express servir
+    outDir: "dist", // agora pode ser direto, sem '../'
     emptyOutDir: true,
-  },
-  server: {
-    host: "::",
-    port: 8080,
   },
   plugins: [
     react(),
